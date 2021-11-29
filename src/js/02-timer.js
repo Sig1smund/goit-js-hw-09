@@ -53,7 +53,7 @@ class Timer {
     }
     const targetTime = fp.selectedDates[0];
 
-    if (targetTime < Date.now()) {
+    if (targetTime < Date.now() || !targetTime) {
       return Notiflix.Notify.failure('Please choose a date in the future');
     }
     this.isActive = true;
