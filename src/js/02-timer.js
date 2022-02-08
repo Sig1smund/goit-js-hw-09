@@ -15,6 +15,7 @@ input.style.color = 'blue';
 input.style.padding = '10px';
 input.style.border = '1px solid blue';
 input.style.borderRadius = '4px';
+// input.value = Date.now();
 
 const daysCounter = document.querySelector('span[data-days]');
 daysCounter.style.color = 'red';
@@ -51,6 +52,8 @@ class Timer {
     if (this.isActive) {
       return;
     }
+    startBtn.disabled = true;
+
     const targetTime = fp.selectedDates[0];
 
     if (targetTime < Date.now() || !targetTime) {
